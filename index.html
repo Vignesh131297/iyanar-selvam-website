@@ -54,6 +54,12 @@ summary span[aria-hidden]{transition:rotate .3s}
 .reveal{animation:fadeUp linear both;animation-timeline:view();animation-range:entry 0% cover 26%}
 .line-grow{animation:grow linear both;animation-timeline:view();animation-range:entry 10% cover 45%}
 }
+.save-story{display:flex;align-items:stretch}
+.save-story-img{position:relative;flex:0 0 44%;display:flex;align-items:flex-end;justify-content:center;padding:40px 0 0 clamp(16px,3vw,40px)}
+.save-story-img img{display:block;width:100%;max-width:520px;height:auto}
+.save-story-text{flex:1 1 0;justify-content:center;z-index:0}
+.save-story-ring{position:absolute;inset:0;z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(to right,transparent,#000 35%);mask-image:linear-gradient(to right,transparent,#000 35%)}
+@media (max-width:820px){.save-story{flex-direction:column-reverse}.save-story-img{flex:none;padding:0 16px}.save-story-img img{max-width:360px}.save-story-text{padding-bottom:24px!important}.save-story-ring{-webkit-mask-image:linear-gradient(#000 65%,transparent);mask-image:linear-gradient(#000 65%,transparent)}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 <style>#chat[hidden]{display:none!important}</style>
@@ -150,10 +156,14 @@ summary span[aria-hidden]{transition:rotate .3s}
 
 <!-- ================= SAVING STORY (couple) ================= -->
 <section aria-label="Saving is the first step" style="max-width: 1240px; margin: 0 auto; padding: 110px 24px 0">
-<div class="reveal" style="background: #001A52; color: #FFFFFF; border-radius: 40px; position: relative; overflow: hidden; display: flex; justify-content: center; text-align: center">
+<div class="reveal save-story" style="background: #001A52; color: #FFFFFF; border-radius: 40px; position: relative; overflow: hidden; text-align: center">
 <svg aria-hidden="true" width="100%" height="100%" style="position: absolute; inset: 0; opacity: 0.08"><rect width="100%" height="100%" fill="url(#kolam)"></rect></svg>
-<svg aria-hidden="true" class="ring" width="1000" height="1000" viewBox="0 0 100 100" style="position: absolute; left: 50%; top: 50%; margin: -500px 0 0 -500px; opacity: 0.12"><path d="M50 3 L97 50 L50 97 L3 50 Z" fill="none" stroke="#E0A370" stroke-width="0.6"></path><path d="M50 16 L84 50 L50 84 L16 50 Z" fill="none" stroke="#FFFFFF" stroke-width="0.4" stroke-dasharray="2 2"></path></svg>
-<div lang="ta" style="position: relative; padding: clamp(56px, 7vw, 96px) clamp(24px, 4vw, 56px); display: flex; flex-direction: column; align-items: center; gap: 14px; font-family: 'Noto Sans Tamil', sans-serif">
+<div class="save-story-img">
+<div aria-hidden="true" style="position: absolute; left: 10%; right: 0; bottom: -10%; height: 80%; background: radial-gradient(closest-side, rgba(224,163,112,0.35), rgba(224,163,112,0)); pointer-events: none"></div>
+<img src="assets/saving-couple.webp" alt="A smiling couple in traditional white clothes dropping money into a clay savings pot" width="969" height="1016" loading="lazy" style="position: relative">
+</div>
+<div lang="ta" class="save-story-text" style="position: relative; padding: clamp(56px, 7vw, 96px) clamp(24px, 4vw, 56px); display: flex; flex-direction: column; align-items: center; gap: 14px; font-family: 'Noto Sans Tamil', sans-serif">
+<div aria-hidden="true" class="save-story-ring"><svg class="ring" width="1000" height="1000" viewBox="0 0 100 100" style="position: absolute; left: 50%; top: 50%; margin: -500px 0 0 -500px; opacity: 0.12"><path d="M50 3 L97 50 L50 97 L3 50 Z" fill="none" stroke="#E0A370" stroke-width="0.6"></path><path d="M50 16 L84 50 L50 84 L16 50 Z" fill="none" stroke="#FFFFFF" stroke-width="0.4" stroke-dasharray="2 2"></path></svg></div>
 <span style="font-size: 18px; font-weight: 600; color: #C7D0E4">வளமைக்கான வாழ்வின் பயணம்</span>
 <span class="shine" style="font-size: clamp(56px, 7vw, 104px); font-weight: 800; line-height: 1.1">சேமிப்பு</span>
 <span style="font-size: clamp(22px, 2.4vw, 32px); font-weight: 700; line-height: 1.4">எனும் <span style="color: #E0A370">முதல் படியில்</span><br>துவங்குகிறது.</span>
